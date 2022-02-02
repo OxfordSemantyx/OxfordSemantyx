@@ -20452,10 +20452,11 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   function ResultListItem({ result }) {
     return /* @__PURE__ */ import_react.default.createElement("div", {
       style: {
-        margin: "30px",
-        borderRadius: "20px",
+        margin: "20px 5px",
         backgroundColor: "#ffe6db",
-        padding: "20px"
+        padding: "20px",
+        boxShadow: "1px 1px 2px 0px #342627",
+        overflowX: "hidden"
       }
     }, result);
   }
@@ -20463,8 +20464,9 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   // src/ts/components/ResultList.tsx
   function ResultList({ results }) {
     console.log("result list rendered");
-    return /* @__PURE__ */ import_react2.default.createElement("div", null, results.map((res) => /* @__PURE__ */ import_react2.default.createElement(ResultListItem, {
-      result: res
+    return /* @__PURE__ */ import_react2.default.createElement("div", null, results.map((res, id) => /* @__PURE__ */ import_react2.default.createElement(ResultListItem, {
+      result: res,
+      key: id
     })));
   }
 
@@ -20513,7 +20515,8 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     return /* @__PURE__ */ import_react5.default.createElement("div", {
       style: {
         width: "100vw",
-        minHeight: "100vh",
+        height: "100vh",
+        overflow: "scroll",
         ...style
       }
     }, children);
@@ -20533,7 +20536,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     };
     return /* @__PURE__ */ import_react6.default.createElement(Screen, {
       style: {
-        backgroundColor: "#f77f4d"
+        background: "radial-gradient(circle, rgba(80,89,168,1) 71%, rgba(60,64,134,1) 100%)"
       }
     }, /* @__PURE__ */ import_react6.default.createElement("div", {
       style: {
@@ -20546,40 +20549,42 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       style: {
         fontFamily: "BlackRose",
         fontSize: "5em",
-        color: "122f86"
+        color: "#d3fbe1",
+        textShadow: "0px 0px 100px #d5f2d7"
       }
     }, "veer"), /* @__PURE__ */ import_react6.default.createElement("div", {
       style: {
         display: "flex",
-        alignItems: "start"
+        flexDirection: "column",
+        alignItems: "center"
       }
     }, /* @__PURE__ */ import_react6.default.createElement(ResizableTextarea, {
       onChange: updateQuery,
-      minRows: 2,
+      minRows: 1,
       maxRows: 5,
       style: {
         width: "80vw",
         boxSizing: "border-box",
         border: "none",
-        borderRadius: "3px",
         resize: "none",
         fontSize: "20px",
         lineHeight: "24px",
         overflow: "auto",
         height: "auto",
         padding: "8px",
-        boxShadow: "0px 4px 10px -8px black"
+        boxShadow: "#342627 0px 4px 10px -5px"
       },
-      placeholder: "What would you like to do for a living?"
+      placeholder: "I want to..."
     }), /* @__PURE__ */ import_react6.default.createElement("button", {
       style: {
-        height: "64px",
-        borderRadius: "0px 10px 10px 0px",
+        fontSize: "1em",
+        marginTop: "10px",
         border: "none",
-        padding: "0px 10px"
+        padding: "10px 40px",
+        boxShadow: "#342627 0px 4px 10px -5px"
       },
       onClick: sendQuery
-    }, "Send"))), /* @__PURE__ */ import_react6.default.createElement("div", {
+    }, "Search"))), /* @__PURE__ */ import_react6.default.createElement("div", {
       style: {
         height: "50px"
       }
