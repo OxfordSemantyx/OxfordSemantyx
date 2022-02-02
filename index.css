@@ -1,0 +1,9 @@
+body{
+	margin: 0
+}
+
+@font-face {
+  font-family: BlackRose;
+  src: url('./blackrose.ttf') format('truetype');
+}
+
