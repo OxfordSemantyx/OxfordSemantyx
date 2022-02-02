@@ -20437,7 +20437,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   // src/ts/lib/remote.ts
   var API_HOST = "aws.veer.zugri.me";
   var API_PORT = 443;
-  var apiHostname = `http://${API_HOST}:${API_PORT}`;
+  var apiHostname = `https://${API_HOST}:${API_PORT}`;
   function search(query) {
     const reqUrl = new URL("/search", apiHostname);
     reqUrl.searchParams.append("query", query);
