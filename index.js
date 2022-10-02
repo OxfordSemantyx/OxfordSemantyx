@@ -20463,7 +20463,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
 
   // src/ts/components/ResultList.tsx
   function ResultList({ results }) {
-    console.log("result list rendered");
+    console.log("result list rendered", results);
     return /* @__PURE__ */ import_react2.default.createElement("div", null, results.map((res, id) => /* @__PURE__ */ import_react2.default.createElement(ResultListItem, {
       result: res,
       key: id
@@ -20531,7 +20531,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     };
     const sendQuery = async function() {
       const queryResponse = await search(query);
-      const results2 = queryResponse.data.results.map((result) => result[0]);
+      const results2 = queryResponse.data.results;
       setResults(results2);
     };
     return /* @__PURE__ */ import_react6.default.createElement(Screen, {
